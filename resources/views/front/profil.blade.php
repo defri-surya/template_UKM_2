@@ -29,14 +29,14 @@
                     <div class="row">
                         <div class="col-lg-6 order-1 order-lg-2 mb-5" data-aos="zoom-in" data-aos-delay="100">
                             <h3>Tentang Kami</h3>
-                             <li><i></i> {{ $data->deskripsi }}</li>
+                            <li><i></i> {{ $dataProfil->deskripsi }}</li>
                         </div>
                         <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                            <h3>Ecommarce PT Kala Citra Nuswantara</h3>
+                            <h3>{{ $dataProfil->nama }}</h3>
                             <ul>
-                                <li><i class="fas fa-map-marker-alt"></i> {{ $data->alamat }}</li>
-                                <li><i class="fas fa-phone"></i> {{ $data->phone }}</li>
-                                <li><i class="fas fa-envelope"></i> {{ $data->email }}
+                                <li><i class="fas fa-map-marker-alt"></i> {{ $dataProfil->alamat }}</li>
+                                <li><i class="fas fa-phone"></i> {{ $dataProfil->phone }}</li>
+                                <li><i class="fas fa-envelope"></i> {{ $dataProfil->email }}
                                 </li>
                             </ul>
                         </div>

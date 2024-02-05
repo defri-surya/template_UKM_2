@@ -27,15 +27,27 @@
                 </div>
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                     <div class="slider-carousel owl-carousel">
-                        <div class="single-slider text-center"
-                            style="background: url({{ asset($produk->foto) }}) center center; background-size:cover; position:relative">
-                        </div>
-                        <div class="single-slider text-center"
-                            style="background: url({{ asset($produk->foto2) }}) center center; background-size:cover; position:relative">
-                        </div>
-                        <div class="single-slider text-center"
-                            style="background: url({{ asset($produk->foto3) }}) center center; background-size:cover; position:relative">
-                        </div>
+                        @if ($produk->foto != null && $produk->foto2 != null && $produk->foto3 != null)
+                            <div class="single-slider text-center"
+                                style="background: url({{ asset($produk->foto) }}) center center; background-size:cover; position:relative">
+                            </div>
+                            <div class="single-slider text-center"
+                                style="background: url({{ asset($produk->foto2) }}) center center; background-size:cover; position:relative">
+                            </div>
+                            <div class="single-slider text-center"
+                                style="background: url({{ asset($produk->foto3) }}) center center; background-size:cover; position:relative">
+                            </div>
+                        @else
+                            <div class="single-slider text-center"
+                                style="background: url({{ asset('front/noimageavailable.png') }}) center center; background-size:cover; position:relative">
+                            </div>
+                            <div class="single-slider text-center"
+                                style="background: url({{ asset('front/noimageavailable.png') }}) center center; background-size:cover; position:relative">
+                            </div>
+                            <div class="single-slider text-center"
+                                style="background: url({{ asset('front/noimageavailable.png') }}) center center; background-size:cover; position:relative">
+                            </div>
+                        @endif
                     </div>
                     {{-- <div class="row event-item">
                         <div class="col-lg-2"></div>
@@ -65,17 +77,23 @@
                                 {!! $produk->deskripsi !!}
                             </span>
                             <div class="btns d-flex d-block justify-content-center mb-5 mt-3">
-                                <form action="{{ route('keranjangbeli') }}" method="POST">
+                                {{-- <form action="{{ route('keranjangbeli') }}" method="POST">
                                     @csrf
-                                    {{-- <input type="hidden" name="produkid" value="{{ $produk->id }}">
+                                    <input type="hidden" name="produkid" value="{{ $produk->id }}">
                                     <button type="submit" class="btn btn-outline-primary"
-                                        style="border-radius: 20px">Masukkan Keranjang</button> --}}
-                                </form>
-                                <a href="https://wa.me/{{ $data->phone }}" target="_blank"
-                                    class="btn btn-outline-primary " style="border-radius: 20px"> <span
+                                        style="border-radius: 20px">Masukkan Keranjang</button>
+                                </form> --}}
+                                <a href="https://wa.me/{{ $dataLink->wa_admin }}" target="_blank"
+                                    class="btn btn-outline-primary mr-1" style="border-radius: 20px"> <span
                                         style="vertical-align:center">
-                                        Order Now </span>
+                                        WhatsApp </span>
                                 </a>
+                                @foreach ($arrayLink as $dataLinkItem)
+                                    <a href="{{ $dataLinkItem }}" target="_blank" class="btn btn-outline-primary mr-1"
+                                        style="border-radius: 20px"> <span style="vertical-align:center">
+                                            Order In Marketplace </span>
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
                         <div class="col-lg-2"></div>

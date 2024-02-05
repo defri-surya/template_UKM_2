@@ -32,15 +32,15 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 order-1 order-lg-2 mb-5" data-aos="zoom-in" data-aos-delay="100">
-                        <h3 v>Tentang Kami</h3>
-                        <li><i></i> {{ $data->deskripsi }}</li>
+                        <h3>Tentang Kami</h3>
+                        <li><i></i> {{ $dataProfil->deskripsi }}</li>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                        <h3>Ecommarce PT Kala Citra Nuswantara</h3>
+                        <h3>{{ $dataProfil->nama }}</h3>
                         <ul>
-                            <li><i class="fas fa-map-marker-alt"></i> {{ $data->alamat }}</li>
-                            <li><i class="fas fa-phone"></i> {{ $data->phone }}</li>
-                            <li><i class="fas fa-envelope"></i> {{ $data->email }}
+                            <li><i class="fas fa-map-marker-alt"></i> {{ $dataProfil->alamat }}</li>
+                            <li><i class="fas fa-phone"></i> {{ $dataProfil->phone }}</li>
+                            <li><i class="fas fa-envelope"></i> {{ $dataProfil->email }}
                             </li>
                         </ul>
                     </div>
@@ -54,8 +54,8 @@
                 <div class="section-title">
                     <h4 class="text-center mb-5">Produk Kami</h4>
                 </div>
-                <div class="row">
-                    @forelse ($produk as $item)
+                @forelse ($produk as $item)
+                    <div class="row">
                         <div class="col-lg-4">
                             <div class="single-icon-box" style="background-image: url({{ asset($item->foto) }})">
                                 <div class="icon-box-content">
@@ -72,15 +72,15 @@
                                 </div>
                             </div>
                         </div>
-                    @empty
-                        <span><i>Data Tidak Tersedia</i></span>
-                    @endforelse
-                </div>
-                <br />
-                <div class="blog-btn text-center">
-                    <a href="{{ route('katalogproduk') }}" class="btn btn-outline-primary" style="border-radius: 40px"><i
-                            class="fas fa-arrow-right"></i> Selengkapnya</a>
-                </div>
+                    </div>
+                    <br />
+                    <div class="blog-btn text-center">
+                        <a href="{{ route('katalogproduk') }}" class="btn btn-outline-primary"
+                            style="border-radius: 40px"><i class="fas fa-arrow-right"></i> Selengkapnya</a>
+                    </div>
+                @empty
+                    <span><i>Produk Tidak Tersedia</i></span>
+                @endforelse
             </div>
         </div>
         <!-- End Icon Box Area -->
@@ -121,8 +121,8 @@
                         </div>
                     </div>
                     <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-                        <div class="row g-0">
-                            @foreach ($gallery as $item)
+                        @forelse ($gallery as $item)
+                            <div class="row g-0">
                                 <div class="col-lg-3 col-md-4 mb-4">
                                     <div class="gallery-item">
                                         <a href="{{ asset($item->foto) }}" class="glightbox" data-gall="gallery-item">
@@ -131,12 +131,14 @@
                                         </a>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
-                        <div class="blog-btn text-center">
-                            <a href="{{ route('gallery') }}" class="btn btn-outline-primary" style="border-radius: 40px"><i
-                                    class="fas fa-arrow-right"></i> Selengkapnya</a>
-                        </div>
+                            </div>
+                            <div class="blog-btn text-center">
+                                <a href="{{ route('gallery') }}" class="btn btn-outline-primary"
+                                    style="border-radius: 40px"><i class="fas fa-arrow-right"></i> Selengkapnya</a>
+                            </div>
+                        @empty
+                            <span><i>Gallery Tidak Tersedia</i></span>
+                        @endforelse
                     </div>
                 </div>
             </div>

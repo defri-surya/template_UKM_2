@@ -32,17 +32,22 @@
                     </div>
                     <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
                         <div class="row g-0">
-                            @foreach ($gallery as $value)
+                            @forelse ($gallery as $value)
                                 <div class="col-lg-3 col-md-4 mb-4">
                                     <div class="gallery-item">
-                                        <a href="{{ asset($value->foto) }}" class="glightbox"
-                                            data-gall="gallery-item">
+                                        <a href="{{ asset($value->foto) }}" class="glightbox" data-gall="gallery-item">
                                             <img src="{{ asset($value->foto) }}" alt="" class="img-fluid"
                                                 style="width:100%; height: 220px; object-fit:cover">
                                         </a>
                                     </div>
                                 </div>
-                            @endforeach
+                            @empty
+                                <div class="col-lg-12 col-md-12 mb-4">
+                                    <div class="gallery-item text-center">
+                                        <h4>Gallery Tidak Tersedia !</h4>
+                                    </div>
+                                </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>

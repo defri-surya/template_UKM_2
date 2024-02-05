@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <a data-toggle="tooltip" href="{{ route('ukm') }}">
-                        <img src="{{-- {{ asset('front') }}/LogoJemparingan.png --}}" alt="" style="max-width: 100px">
+                        <img src="{{-- {{ asset('front') }}/LogoJemparingan.png --}}" alt="" style="max-width: 90px">
                     </a>
                 </div>
                 <div class="col-6 d-lg-none static text-right">
@@ -26,9 +26,9 @@
                             <li class="{{ Request::is('gallery*') ? 'active' : '' }}">
                                 <a href="{{ route('gallery') }}">Gallery</a>
                             </li>
-                            <li class="{{ Request::is('/#contact*') ? 'active' : '' }}">
+                            {{-- <li class="{{ Request::is('/#contact*') ? 'active' : '' }}">
                                 <a href="#contact-us">Contact</a>
-                            </li>
+                            </li> --}}
                             {{-- <li class="{{ Request::is('/#contact*') ? 'active' : '' }}">
                                 <a href="{{ route('login') }}">Login</a>
                             </li> --}}

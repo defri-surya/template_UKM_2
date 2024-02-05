@@ -8,11 +8,14 @@
                         <img src="{{-- {{ asset('front') }}/LogoJemparingan.png --}}" alt="" style="max-width: 200px">
                     </div>
                     <div class="footer-dec">
-                        <p>{{ $data->alamat }}</p>
+                        <p>{{ $dataProfil->alamat }}</p>
                     </div>
                     <ul class="social-links">
                         {{-- <li><a href="{{ $data->fb }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li> --}}
-                        <li><a href="{{ $sosmed->sosmed }}" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        @foreach ($arraySosmed as $item)
+                            <li><a href="{{ $item }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        @endforeach
                         {{-- <li><a href="{{ $data->ytb }}" target="_blank"><i class="fab fa-youtube"></i></a></li> --}}
                     </ul>
                 </div>
@@ -27,7 +30,7 @@
                         <li><a href="{{ route('profil') }}">Profile</a></li>
                         <li><a href="{{ route('katalogproduk') }}">Produk</a></li>
                         <li><a href="{{ route('gallery') }}">Gallery</a></li>
-                        <li><a href="#contact-us">Contact</a></li>
+                        {{-- <li><a href="#contact-us">Contact</a></li> --}}
                         {{-- <li><a href="#" data-toggle="modal" data-target="#exampleModalScrollable">Terms of Service</a> --}}
                         </li>
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalScrollable1">Cara
@@ -253,8 +256,8 @@
                 <div class="copyright-area ">
                     <p>Copyright © {{ date('Y') }} <strong><span>PT KALA CITRA NUSWANTARA</span></strong>. All
                         Rights
-                        Reserved<br><a href="https://dinkopukm.slemankab.go.id/">PT KALA CITRA NUSWANTARA
-                            <br>{{-- Kabupaten Sleman --}}</a></p>
+                        Reserved
+                    </p>
                 </div>
             </div>
         </div>
