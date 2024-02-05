@@ -5,7 +5,11 @@
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <a data-toggle="tooltip" href="{{ route('ukm') }}">
-                        <img src="{{-- {{ asset('front') }}/LogoJemparingan.png --}}" alt="" style="max-width: 90px">
+                        @if ($dataProfil->logo === null)
+                            <img src="{{ asset('front/noimage.png') }}" alt="" style="max-width: 90px">
+                        @else
+                            <img src="{{ asset($dataProfil->logo) }}" alt="" style="max-width: 90px">
+                        @endif
                     </a>
                 </div>
                 <div class="col-6 d-lg-none static text-right">

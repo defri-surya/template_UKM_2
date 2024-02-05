@@ -5,7 +5,11 @@
             <div class="col-lg-5 col-md-6">
                 <div class="footer-widget">
                     <div class="footer-logo">
-                        <img src="{{-- {{ asset('front') }}/LogoJemparingan.png --}}" alt="" style="max-width: 200px">
+                        @if ($dataProfil->logo === null)
+                            <img src="{{ asset('front/noimage.png') }}" alt="" style="max-width: 200px">
+                        @else
+                            <img src="{{ asset($dataProfil->logo) }}" alt="" style="max-width: 200px">
+                        @endif
                     </div>
                     <div class="footer-dec">
                         <p>{{ $dataProfil->alamat }}</p>

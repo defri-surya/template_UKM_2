@@ -44,7 +44,7 @@
                             @empty
                                 <div class="col-lg-12 col-md-12 mb-4">
                                     <div class="gallery-item text-center">
-                                        <h4>Gallery Tidak Tersedia !</h4>
+                                        <span><i>Gallery Tidak Tersedia !</i></span>
                                     </div>
                                 </div>
                             @endforelse
