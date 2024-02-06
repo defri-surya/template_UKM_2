@@ -15,9 +15,9 @@
             <div class="col-md-12 grid-margin stretch-card mb-4 justify-content-center">
                 @if ($data->logo === null)
                     <img src="{{ asset('front') }}/noimage.png"
-                        style="max-width: 40%; border: 2px solid #bebbbb; border-radius: 50%">
+                        style="max-width: 35%; border: 2px solid #bebbbb; border-radius: 50%">
                 @else
-                    <img src="{{ asset($data->logo) }}" style="max-width: 40%; border: 2px solid #bebbbb; border-radius: 50%">
+                    <img src="{{ asset($data->logo) }}" style="max-width: 35%; border: 2px solid #bebbbb; border-radius: 5%">
                 @endif
             </div>
             <div class="col-md-12 grid-margin stretch-card mb-4 justify-content-center">

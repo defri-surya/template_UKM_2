@@ -42,13 +42,15 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea1">Deskripsi</label>
-                            <textarea class="form-control" id="exampleTextarea1" name="deskripsi"
-                                rows="4">{{ old('deskripsi', $data->deskripsi) }}</textarea>
+                            <textarea class="form-control" id="exampleTextarea1" name="deskripsi" rows="4">{{ old('deskripsi', $data->deskripsi) }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleTextarea1">Alamat </label>
-                            <textarea class="form-control" id="exampleTextarea1" name="alamat"
-                                rows="4">{{ old('alamat', $data->alamat) }}</textarea>
+                            <textarea class="form-control" id="exampleTextarea1" name="alamat" rows="4">{{ old('alamat', $data->alamat) }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleTextarea1">Maps </label>
+                            <textarea class="form-control" id="exampleTextarea1" name="maps" rows="4">{{ old('maps', $data->maps) }}</textarea>
                         </div>
                         {{-- <div class="form-group">
                             <label for="exampleInputName1">Youtube Channel</label>
@@ -70,7 +72,7 @@
                             <input type="text" name="tiktok" class="form-control" id="exampleInputName1"
                                 placeholder="tiktok" value="{{ old('tiktok', $data->tiktok) }}">
                         </div> --}}
-                      
+
                         {{-- <div class="form-group">
                             <label>Foto 1</label>
                             <input type="file" name="foto1" class="file-upload-default">

@@ -56,13 +56,12 @@
                     <i class="mdi mdi-receipt menu-icon"></i>
                 </a>
             </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link {{ Request::is('produkunggulan*') ? 'active' : '' }}"
-                    href="{{ route('produkunggulan.index') }}">
-                    <span class="menu-title">Produk Unggulan</span>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('faq*') ? 'active' : '' }}" href="{{ route('faq.index') }}">
+                    <span class="menu-title">FAQ</span>
                     <i class="mdi mdi-receipt menu-icon"></i>
                 </a>
-            </li> --}}
+            </li>
             {{-- <li class="nav-item">
                 <a class="nav-link {{ Request::is('produkunggulan*') ? 'active' : '' }}"
                     href="{{ route('produkunggulan.index') }}">
@@ -77,58 +76,6 @@
                     <i class="mdi mdi-receipt menu-icon"></i>
                 </a>
             </li> --}}
-        @endcan
-        @can('isPaketdua')
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('fotosliderpaketdua*') ? 'active' : '' }}"
-                    href="{{ route('fotosliderpaketdua.index') }}">
-                    <span class="menu-title">Foto Slider Paket Dua</span>
-                    <i class="mdi mdi-contacts menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('profilepaketdua*') ? 'active' : '' }}"
-                    href="{{ route('profilepaketdua.index') }}">
-                    <span class="menu-title">Profile</span>
-                    <i class="mdi mdi-contacts menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('youtubepaketdua*') ? 'active' : '' }}"
-                    href="{{ route('youtubepaketdua.index') }}">
-                    <span class="menu-title">You Tube / Video</span>
-                    <i class="mdi mdi-contacts menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('gallerypaketdua*') ? 'active' : '' }}"
-                    href="{{ route('gallerypaketdua.index') }}">
-                    <span class="menu-title">Gallery</span>
-                    <i class="mdi mdi-file-image menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('mediapaketdua*') ? 'active' : '' }}"
-                    href="{{ route('mediapaketdua.index') }}">
-                    <span class="menu-title">Sosial Media Link </span>
-                    <i class="mdi mdi-receipt menu-icon"></i>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('productpaketdua*') ? 'active' : '' }}"
-                    href="{{ route('productpaketdua.index') }}">
-                    <span class="menu-title">Produk</span>
-                    <i class="mdi mdi-receipt menu-icon"></i>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::is('linkpaketdua*') ? 'active' : '' }}"
-                    href="{{ route('linkpaketdua.index') }}">
-                    <span class="menu-title">Link </span>
-                    <i class="mdi mdi-receipt menu-icon"></i>
-                </a>
-            </li>
         @endcan
         <li class="nav-item sidebar-actions">
             <span class="nav-link">

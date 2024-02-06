@@ -14,7 +14,12 @@ class SosmedSeeder extends Seeder
     {
         DB::table('sosmeds')->insert([
             [
-                'sosmed' => '{"sosmed": ["www.shoppe.co.id"]}',
+                'facebook' => 'www.facebook.com',
+                'instagram' => 'www.instagram.com',
+                'twitter' => 'www.twitter.com',
+                'youtube' => 'www.youtube.com',
+                'tiktok' => 'www.tiktok.com',
+                'pinterest' => 'www.pinterest.com',
             ]
         ]);
     }

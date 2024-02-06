@@ -3,7 +3,7 @@
         @php
             $data = App\Profile::first();
         @endphp
-        <a class="navbar-brand brand-logo" href="{{ route('home') }}" style="width: 35px">
+        <a class="navbar-brand brand-logo" href="{{ route('home') }}" style="max-width: 15%">
             @if ($data->logo === null)
                 <img src="{{ asset('front') }}/noimage.png">
             @else

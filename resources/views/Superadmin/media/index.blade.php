@@ -17,13 +17,35 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Sosial Media </label>
-                        @foreach ($arraySosmed as $item)
-                            <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
-                                placeholder="Email" value="{{ old('sosmed', $item) }}" readonly>
-                        @endforeach
+                        <label for="exampleInputEmail3">Facebook </label>
+                        <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
+                            placeholder="Belum ditetapkan !" value="{{ $data->facebook }}" readonly>
                     </div>
-                    </form>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Instagram </label>
+                        <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
+                            placeholder="Belum ditetapkan !" value="{{ $data->instagram }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Twitter </label>
+                        <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
+                            placeholder="Belum ditetapkan !" value="{{ $data->twitter }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Youtube </label>
+                        <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
+                            placeholder="Belum ditetapkan !" value="{{ $data->youtube }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Tiktok </label>
+                        <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
+                            placeholder="Belum ditetapkan !" value="{{ $data->tiktok }}" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Pinterest </label>
+                        <input type="text" class="form-control mt-1" name="sosmed" id="exampleInputEmail3"
+                            placeholder="Belum ditetapkan !" value="{{ $data->pinterest }}" readonly>
+                    </div>
                 </div>
             </div>
         </div>

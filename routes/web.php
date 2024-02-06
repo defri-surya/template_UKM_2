@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth'], 'prefix' => 'Superadmin'], function () {
         Route::resource('product', 'ProdukController');
         Route::resource('link', 'LinkController');
         Route::resource('produkunggulan', 'ProdukunggulanController');
+        Route::resource('faq', 'faqController');
     });
 });
 

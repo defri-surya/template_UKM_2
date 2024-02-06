@@ -21,6 +21,7 @@ class CreateProfilesTable extends Migration
             $table->string('phone');
             $table->text('deskripsi');
             $table->text('alamat');
+            $table->text('maps');
             $table->timestamps();
         });
     }

@@ -14,14 +14,6 @@
                     <div class="footer-dec">
                         <p>{{ $dataProfil->alamat }}</p>
                     </div>
-                    <ul class="social-links">
-                        {{-- <li><a href="{{ $data->fb }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li> --}}
-                        @foreach ($arraySosmed as $item)
-                            <li><a href="{{ $item }}" target="_blank"><i class="fab fa-instagram"></i></a>
-                            </li>
-                        @endforeach
-                        {{-- <li><a href="{{ $data->ytb }}" target="_blank"><i class="fab fa-youtube"></i></a></li> --}}
-                    </ul>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -40,6 +32,37 @@
                         <li><a href="#" data-toggle="modal" data-target="#exampleModalScrollable1">Cara
                                 Pembelian</a>
                         </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-widget">
+                    <div class="widget-title">
+                        <h6>Social Media</h6>
+                    </div>
+                    <ul class="social-links">
+                        @if ($sosmed->facebook != null)
+                            <li><a href="{{ $sosmed->facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                        @endif
+                        @if ($sosmed->instagram != null)
+                            <li><a href="{{ $sosmed->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                        @endif
+                        @if ($sosmed->youtube != null)
+                            <li><a href="{{ $sosmed->youtube }}" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                        @endif
+                        @if ($sosmed->twitter != null)
+                            <li><a href="{{ $sosmed->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
+                            </li>
+                        @endif
+                        @if ($sosmed->tiktok != null)
+                            <li><a href="{{ $sosmed->tiktok }}" target="_blank"><i class="fab fa-tiktok"></i></a></li>
+                        @endif
+                        @if ($sosmed->pinterest != null)
+                            <li><a href="{{ $sosmed->pinterest }}" target="_blank"><i class="fab fa-pinterest"></i></a>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             </div>

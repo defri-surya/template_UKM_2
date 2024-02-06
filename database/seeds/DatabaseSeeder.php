@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LinkSeeder::class);
         $this->call(SosmedSeeder::class);
         $this->call(YoutubeSeeder::class);
+        $this->call(faqSeeder::class);
     }
 }

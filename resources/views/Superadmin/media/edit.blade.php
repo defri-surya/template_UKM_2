@@ -16,51 +16,64 @@
                         @csrf
 
                         <div class="form-group">
-                            <label for="exampleInputName1">Sosial Media Link</label> <br>
-                            @foreach ($arraySosmed as $item)
-                                <div class="row controls-row">
-                                    <div class="col-md-11">
-                                        <input type="text" name="sosmed[]" class="form-control mt-1"
-                                            id="exampleInputName1" placeholder="Sosial Media Link"
-                                            value="{{ $item }}">
-                                    </div>
-                                    <div class="col-md-1">
-                                        <button type="button"
-                                            class="btn btn-gradient-primary btn-sm mt-1 remove-input-field"
-                                            style="border-radius: 10px">
-                                            <i class="mdi mdi-trash-can-outline"></i>
-                                        </button>
-                                    </div>
+                            <label for="exampleInputName1">Facebook</label> <br>
+                            <div class="row controls-row">
+                                <div class="col-md-12">
+                                    <input type="text" name="facebook" class="form-control mt-1" id="exampleInputName1"
+                                        placeholder="Sosial Media Link" value="{{ $data->facebook }}">
                                 </div>
-                            @endforeach
-                            <button type="button" class="btn btn-gradient-primary btn-sm mt-1" style="border-radius: 10px"
-                                id="dynamic-ar">Add<i class="mdi mdi-loupe btn-icon-append"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Instagram</label> <br>
+                            <div class="row controls-row">
+                                <div class="col-md-12">
+                                    <input type="text" name="instagram" class="form-control mt-1" id="exampleInputName1"
+                                        placeholder="Sosial Media Link" value="{{ $data->instagram }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Twitter</label> <br>
+                            <div class="row controls-row">
+                                <div class="col-md-12">
+                                    <input type="text" name="twitter" class="form-control mt-1" id="exampleInputName1"
+                                        placeholder="Sosial Media Link" value="{{ $data->twitter }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Youtube</label> <br>
+                            <div class="row controls-row">
+                                <div class="col-md-12">
+                                    <input type="text" name="youtube" class="form-control mt-1" id="exampleInputName1"
+                                        placeholder="Sosial Media Link" value="{{ $data->youtube }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Tiktok</label> <br>
+                            <div class="row controls-row">
+                                <div class="col-md-12">
+                                    <input type="text" name="tiktok" class="form-control mt-1" id="exampleInputName1"
+                                        placeholder="Sosial Media Link" value="{{ $data->tiktok }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1">Pinterest</label> <br>
+                            <div class="row controls-row">
+                                <div class="col-md-12">
+                                    <input type="text" name="pinterest" class="form-control mt-1" id="exampleInputName1"
+                                        placeholder="Sosial Media Link" value="{{ $data->pinterest }}">
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Dynamic Form -->
-                        <div class="control-group" id="dynamicAddRemove">
-                        </div>
-                        <!-- End Dynamic Form -->
-
-                        <button type="submit" class="btn btn-gradient-primary mr-2">Update Data</button>
+                        <button type="submit" class="btn btn-gradient-primary mr-2">Update</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-
-@push('js')
-    <script type="text/javascript">
-        $("#dynamic-ar").click(function() {
-            const nextIndex = $("#dynamicAddRemove").find("input[name='sosmed[]']").length;
-            $("#dynamicAddRemove").append(
-                '<div class="form-group controls-row"><input type="text" name="sosmed[]" class="form-control" id="exampleInputName1" placeholder="Sosial Media Link"><button type="button" class="btn btn-gradient-primary btn-sm mt-1 remove-input-field" style="border-radius: 10px"><i class="mdi mdi-trash-can-outline"></i></button></div>'
-            );
-        });
-
-        $(document).on('click', '.remove-input-field', function() {
-            $(this).parents('.controls-row').remove();
-        });
-    </script>
-@endpush

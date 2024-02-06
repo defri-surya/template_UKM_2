@@ -54,8 +54,8 @@
                 <div class="section-title">
                     <h4 class="text-center mb-5">Produk Kami</h4>
                 </div>
-                @forelse ($produk as $item)
-                    <div class="row">
+                <div class="row">
+                    @forelse ($produk as $item)
                         <div class="col-lg-4">
                             <div class="single-icon-box" style="background-image: url({{ asset($item->foto) }})">
                                 <div class="icon-box-content">
@@ -72,15 +72,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <br />
-                    <div class="blog-btn text-center">
-                        <a href="{{ route('katalogproduk') }}" class="btn btn-outline-primary"
-                            style="border-radius: 40px"><i class="fas fa-arrow-right"></i> Selengkapnya</a>
-                    </div>
-                @empty
-                    <span><i>Produk Tidak Tersedia</i></span>
-                @endforelse
+                    @empty
+                        <span><i>Produk Tidak Tersedia</i></span>
+                    @endforelse
+                </div>
+                <br />
+                <div class="blog-btn text-center">
+                    <a href="{{ route('katalogproduk') }}" class="btn btn-outline-primary" style="border-radius: 40px"><i
+                            class="fas fa-arrow-right"></i> Selengkapnya</a>
+                </div>
             </div>
         </div>
         <!-- End Icon Box Area -->
@@ -97,12 +97,14 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="video-img-thumbnail text-center"
+                        <iframe width="100%" height="500" src="{{ $youtube->video }}" frameborder="0"
+                            allowfullscreen></iframe>
+                        {{-- <div class="video-img-thumbnail text-center"
                             style="background: url({{ asset($slider->foto_1) }}) center center; height: 450px; background-size:cover; position:relative">
                             <a class="glightbox video-play" href="{{ $youtube->video }}">
                                 <i class="far fa-play-circle"></i>
                             </a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -121,8 +123,8 @@
                         </div>
                     </div>
                     <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
-                        @forelse ($gallery as $item)
-                            <div class="row g-0">
+                        <div class="row g-0">
+                            @forelse ($gallery as $item)
                                 <div class="col-lg-3 col-md-4 mb-4">
                                     <div class="gallery-item">
                                         <a href="{{ asset($item->foto) }}" class="glightbox" data-gall="gallery-item">
@@ -131,14 +133,14 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="blog-btn text-center">
-                                <a href="{{ route('gallery') }}" class="btn btn-outline-primary"
-                                    style="border-radius: 40px"><i class="fas fa-arrow-right"></i> Selengkapnya</a>
-                            </div>
-                        @empty
-                            <span><i>Gallery Tidak Tersedia</i></span>
-                        @endforelse
+                            @empty
+                                <span><i>Gallery Tidak Tersedia</i></span>
+                            @endforelse
+                        </div>
+                        <div class="blog-btn text-center">
+                            <a href="{{ route('gallery') }}" class="btn btn-outline-primary" style="border-radius: 40px"><i
+                                    class="fas fa-arrow-right"></i> Selengkapnya</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,9 +159,8 @@
                         </div>
                     </div>
                     <div data-aos="fade-up">
-                        <iframe style="border:0; width: 100%; height: 350px;"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.4168605459813!2d110.44062691450834!3d-7.745531378934938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5bce9857fa8b%3A0xae9c86cd3964854a!2sBlk.%20A%2C%20Sempu%2C%20Wedomartani%2C%20Kec.%20Ngemplak%2C%20Kabupaten%20Sleman%2C%20Daerah%20Istimewa%20Yogyakarta%2055584!5e0!3m2!1sen!2sid!4v1650906356754!5m2!1sen!2sid"
-                            frameborder="0" allowfullscreen></iframe>
+                        <iframe style="border:0; width: 100%; height: 500px;" src="{{ $dataProfil->maps }}" frameborder="0"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -181,7 +182,7 @@
                             <div class="card-header" id="headingOne">
                                 <h5 class="mb-0">
                                     <strong>
-                                        Bagaimana cara melakukan pembelian / pemesanan barang ?
+                                        {{ $faq1->pertanyaan }}
                                     </strong>
                                 </h5>
                                 <a type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
@@ -193,9 +194,7 @@
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Cara pesan/beli barang bisa Anda lihat secara lengkap pada <strong>Cara
-                                        Pembelian</strong> yang berada di bagian paling bawah website ini (Bagian
-                                    <strong>FEATURES</strong>).
+                                    {{ $faq1->jawaban }}
                                 </div>
                             </div>
                         </div>
@@ -203,8 +202,7 @@
                             <div class="card-header" id="headingOne">
                                 <h5 class="mb-0">
                                     <strong>
-                                        Apakah total harga yang tertera pada akhir proses pemesanan ("checkout") selesai
-                                        adalah harga akhir yang harus saya bayar. Tidak ada tagihan lain ?
+                                        {{ $faq2->pertanyaan }}
                                     </strong>
                                 </h5>
                                 <a type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
@@ -215,10 +213,7 @@
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Tidak. Harga yang tertera di kasir/checkout ketika proses pemesanan sukses/selesai
-                                    adalah harga yang sudah termasuk ongkir (ongkos kirim). Bila Anda berbelanja secara
-                                    online melalui website ini, sistem secara otomatis mencantumkan/memasukkan ongkos kirim
-                                    dalam harga total.
+                                    {{ $faq2->jawaban }}
                                 </div>
                             </div>
                         </div>
@@ -226,7 +221,7 @@
                             <div class="card-header" id="headingOne">
                                 <h5 class="mb-0">
                                     <strong>
-                                        Bagaimana cara pembayarannya ?
+                                        {{ $faq3->pertanyaan }}
                                     </strong>
                                 </h5>
                                 <a type="button" data-toggle="collapse" data-target="#collapseThree"
@@ -237,10 +232,7 @@
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    Untuk penentuan metode pambayaran Anda harus menanyakan pada Admin(Pengelola) via
-                                    Whatsapp. Kami telah menyantumkan link Whatsapp pada halaman Invoice/Bukti Transaksi.
-                                    Untuk informasi mengenai metode pembayaran bisa ditanyakan melalui kontak langsung
-                                    dengan kami pada link Whatsapp yang sudah kami sediakan.
+                                    {{ $faq3->jawaban }}
                                 </div>
                             </div>
                         </div>

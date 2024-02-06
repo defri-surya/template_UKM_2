@@ -64,8 +64,8 @@
                     <div class="container mt-3">
                         <div class="tab-content" id="pills-tabContent mb-5">
                             <div class="row menu-container">
-                                @forelse ($produk as $item => $product)
-                                    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                                <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+                                    @forelse ($produk as $item => $product)
                                         <div class="col">
                                             <div class="card h-100">
                                                 <img src="{{ asset($product->foto) }}" class="card-img-top" alt=""
@@ -83,18 +83,18 @@
                                                         <div class="blog-btn">
                                                             <a href="{{ route('detailproduk', $product->slug) }}"
                                                                 class="btn btn-inline read-more-btn"><i
-                                                                    class="fas fa-arrow-right"></i>Selengkapnyaa</a>
+                                                                    class="fas fa-arrow-right"></i>Selengkapnya</a>
                                                         </div>
                                                     </small>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @empty
-                                    <div class="row-cols-md-12 text-center">
-                                        <span><i>Produk Tidak Tersedia !</i></span>
-                                    </div>
-                                @endforelse
+                                    @empty
+                                        <div class="row-cols-md-12 text-center">
+                                            <span><i>Produk Tidak Tersedia !</i></span>
+                                        </div>
+                                    @endforelse
+                                </div>
                             </div>
                             {{-- @forelse ($produk as $count => $item)
                                 <div class="tab-pane fade show @if ($count == 0) active @endif"

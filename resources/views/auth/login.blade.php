@@ -17,7 +17,7 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="{{ asset('front') }}/assets/css/style.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="{{ asset('front') }}/Lambang_Kabupaten_Sleman.png" />
+    {{-- <link rel="shortcut icon" href="{{ asset('front') }}/Lambang_Kabupaten_Sleman.png" /> --}}
 </head>
 
 <body>
